@@ -2,6 +2,8 @@
 import { createClient } from '@/lib/supabase/sever'
 import Link from 'next/link'
 import { DeleteButton } from './delete-button'
+import { iconMap,getIcon } from '@/lib/icon'
+
 
 async function getCategories() {
   const supabase = await createClient()
@@ -52,7 +54,7 @@ export default async function CategoriesPage() {
                 className="p-4 border rounded bg-white flex justify-between items-center"
               >
                 <div className="flex items-center gap-2">
-                  <span className="text-2xl">{cat.icon}</span>
+                  <span className="text-2xl">{getIcon(cat.icon)}</span>
                   <div>
                     <h2 className="font-semibold">{cat.name}</h2>
                     <span 
